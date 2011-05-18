@@ -1,0 +1,14 @@
+# Git ignore list for grails project
+*.iws
+*.war
+.classpath
+.DS_Store
+.project
+.settings
+*.pyc
+/target/**
+/files/**
+/scripts/**
+/doc/build/**
+*~
+._*

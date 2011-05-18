@@ -1,0 +1,15 @@
+CMIS Navigator
+Copyright 2011, Open-T B.V., and individual contributors as indicated here.
+
+This work is released under the GPL and includes direct or indirect contributions from the authors below
+
+
+- Apache Chemistry CMIS Library by Jeff Potts
+
+- ZetCode PyGTK tutorial by Jan Bodnar (zetcode.com) 
+
+- Faenza Gnome Icon theme by Tiheum
+
+- CMIS Navigator code by Joost Horward, Open-T B.V.
+
+- Navigator icon by WooThemes (http://www.woothemes.com/2009/02/wp-woothemes-ultimate-icon-set-first-release/)
