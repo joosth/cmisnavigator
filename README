@@ -1,3 +1,29 @@
 CMIS Navigator
 ==============
 A Python/GTK based desktop client for CMIS repositories
+
+WARNING
+=======
+This code has not been extensively tested (yet). We welcome any feedback and help.
+
+Installing and configuring
+==========================
+unpack the tarball in /opt or copy the contents from the github src folder to /opt/navigator
+edit /opt/navigator/navigator.cfg, or create a copy in ~/.navigator.cfg
+
+By default navigator.cfg points to a folder in Alfresco's CMIS test repository.
+
+Run /opt/navigator/navigator
+
+
+Windows
+=======
+CMIS Navigator is written in Python using PyGTK (it uses GTK).
+You can run it on Windows if you have the appropriate libraries installed.
+There is a problem with drag and drop under Windows, please see the issue tracker on GitHub (https://github.com/joosth/cmisnavigator)
+I am not a Windows user, and I have very little experience using Python/GTK on Windows. Any help to make CMIS Navigator run under Windows is welcome.
+
+
+
+
+  

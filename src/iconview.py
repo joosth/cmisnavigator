@@ -164,15 +164,12 @@ class IconView():
         path = model[itemNo][COL_PATH]
         isDir = model[itemNo][COL_IS_DIRECTORY]
         if not isDir:
-            item=[[itemNo]]
             # TODO read only open needs to go to library            
             #self.app.contextMenu.open_read_only(widget,item)
             if self.app.currentDirectory=="/":
                 fullPath="/"+path
             else:
                 fullPath=self.app.currentDirectory+"/"+path
-        
-            
             self.app.util.openReadOnly(fullPath)
             return
         

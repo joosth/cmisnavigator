@@ -45,6 +45,8 @@ class DragDrop():
         
         # For repo to repo we only support move (see dragrop.py)
         self.app.iconView.widget.enable_model_drag_source(0,[('cmis/'+self.app.repo.id, 0, 0),('text/uri-list', 0, 1)], gtk.gdk.ACTION_DEFAULT | gtk.gdk.ACTION_MOVE)
+        #self.app.iconView.widget.drag_source_set(gtk.gdk.BUTTON1_MASK, [('cmis/'+self.app.repo.id, 0, 0),('text/uri-list', 0, 1)],gtk.gdk.ACTION_MOVE)
+
         # for local to/from repo we only support copy (just to be safe)
         self.app.iconView.widget.enable_model_drag_dest([('cmis/'+self.app.repo.id, 0, 0),('text/uri-list', 0, 1)], gtk.gdk.ACTION_DEFAULT | gtk.gdk.ACTION_COPY)
 
@@ -146,7 +148,7 @@ class DragDrop():
         The target ID is the chosen target (0=CMIS URI of same repository, 1=Normal URI)
         """        
         
-        if True:
+        if self.newDrag:
             
             self.dragSelection=selection
             self.dragItems=self.app.iconView.widget.get_selected_items()
@@ -172,11 +174,12 @@ class DragDrop():
                         localPath=unicode(self.getLocalItemPath(self.app.currentDirectory,itemName))                        
                         uri="file://"+localPath
                         
-                    else:
+                    else:                        
                         self.app.util.statusMessage("Downloading "+itemName+" ...")
                         localPath=unicode(self.copyLocalRecursive(self.app.currentDirectory,itemName))
                         self.app.util.statusMessage("Downloading "+itemName+" ... done.")
                         uri="file://"+localPath
+                        self.newDrag=False
                         
                 paths.append(uri)
     
@@ -213,8 +216,8 @@ class DragDrop():
         """
         Called when D&D begins
         """            
-
-
+        print ("*** DRAG BEGIN ***")
+        self.newDrag=True
     
     
     def onDragDataDelete(self,widget,context,data):
